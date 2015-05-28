@@ -1,0 +1,20 @@
+label: MySQL ROW_FORMAT=Dynamic Pack
+version: 0.1
+
+# 参考
+# lib/MT/Core.pm $core_registry
+# lib/MT/ObjectDriverFactory.pm
+object_drivers:
+    oracle:
+        label: MySQL Database (ROW_FORMAT=Dynamic)
+        dbd_package: DBD::mysqldynamic
+        dbd_version: 0.1
+        config_package: MT::ObjectDriver::Driver::DBD::mysqldynamic
+        match: "(db[id]::)?mysqldynamic"
+        display:
+            - dbserver
+            - dbname
+            - dbuser
+            - dbpass
+            - dbport
+            - dbsocket
